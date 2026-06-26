@@ -30,12 +30,23 @@ The environment consists of a decentralized architecture hosted on Oracle Virtua
 ---
 
 ## 📊 Proof of Concept & Forensic Artifacts
-*(Tip: Drop the screenshots you took during our lab right here to show your work!)*
+## 📊 Proof of Concept & Forensic Artifacts
 
-* **Real-Time FIM Alert Triggered:** `[Insert image_221feb.png here]`
-* **Forensic File Content Diff Collected:** `[Insert image_228ca4.png here]`
-* **Active Response Firewall Block Fired:** `[Insert image_bc29ca.png here]`
+### 1. Real-Time FIM Alert Triggered
+![Real-Time FIM Alert](fim-alert.png)
+This screenshot displays the Wazuh dashboard capturing real-time File Integrity Monitoring (FIM) telemetry from the `linux-target` agent node. When a critical configuration file (`/etc/fake_config.conf`) was modified, the agent immediately detected the change via kernel space monitoring loops and generated a **Level 7 Security Alert (Rule 550: Integrity checksum changed)**.
 
+---
+
+### 2. Forensic File Content Diff Collected
+![Forensic File Content Diff](diff-forensics.png)
+Expanding the alert metadata reveals the precise cryptographic and forensic changes captured by the system. The **`syscheck.diff`** field isolates the exact malicious payload injected into the system: `+unauthorized_admin_access=enabled`. This demonstrates Wazuh's capability to track not just *that* a file was altered, but to preserve a line-by-line historic diff for post-incident forensic investigations, mapping directly to **MITRE ATT&CK T1565.001 (Stored Data Manipulation)**.
+
+---
+
+### 3. Active Response Firewall Block Fired
+![Active Response Firewall Block](active-block.png)
+The final phase of the Purple Team lab demonstrates automated active defense. Upon detecting repeated unauthorized access attempts, the Wazuh Manager dynamically invoked the **`firewall-drop` Active Response script (Rule 651)** on the target machine. The telemetry graph showcases the spike in defensive actions as the manager immediately blocked the offending attacker IP address, neutralizing the threat automatically without human intervention.
 ---
 
 ## 🚀 Key Takeaways & Skills Demonstrated
