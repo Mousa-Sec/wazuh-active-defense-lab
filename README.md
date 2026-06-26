@@ -30,7 +30,6 @@ The environment consists of a decentralized architecture hosted on Oracle Virtua
 ---
 
 ## 📊 Proof of Concept & Forensic Artifacts
-## 📊 Proof of Concept & Forensic Artifacts
 
 ### 1. Real-Time FIM Alert Triggered
 ![Real-Time FIM Alert](fim-alert.png)
@@ -47,6 +46,7 @@ Expanding the alert metadata reveals the precise cryptographic and forensic chan
 ### 3. Active Response Firewall Block Fired
 ![Active Response Firewall Block](active-block.png)
 The final phase of the Purple Team lab demonstrates automated active defense. Upon detecting repeated unauthorized access attempts, the Wazuh Manager dynamically invoked the **`firewall-drop` Active Response script (Rule 651)** on the target machine. The telemetry graph showcases the spike in defensive actions as the manager immediately blocked the offending attacker IP address, neutralizing the threat automatically without human intervention.
+
 ---
 
 ## 🚀 Key Takeaways & Skills Demonstrated
