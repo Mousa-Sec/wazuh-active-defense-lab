@@ -25,7 +25,7 @@ The environment consists of a decentralized architecture hosted on Oracle Virtua
 ### Phase 3: Automated Active Response (Brute-Force Mitigation)
 * Engineered a live digital tripwire directly in the server registry (`ossec.conf`).
 * Developed a dynamic, tiered defense system utilizing severity threshold levels to monitor system telemetry waterfalls (PAM, local `su` authentication, and `unix_chkpwd`).
-* Configured the system to invoke local script execution (`firewall-drop`), dynamically blocking adversarial IP addresses via system firewalls (`iptables`) for 180 seconds when brute-force thresholds are breached.
+* Configured the system to invoke local script execution (`firewall-drop`), dynamically blocking adversarial IP addresses via system firewalls (`iptables`) for 600 seconds (10 minutes) when brute-force thresholds are breached.
 
 ---
 
@@ -50,6 +50,6 @@ The final phase of the Purple Team lab demonstrates automated active defense. Up
 ---
 
 ## 🚀 Key Takeaways & Skills Demonstrated
-* **SIEM Tuning & Log Analysis:** Deep understanding of system log waterfalls (PAM frameworks, SSHD decoders, custom rule matching).
+* **SIEM Tuning & Log Analysis:** Deep understanding of system log waterfalls (PAM, SSHD decoders and the built-in Wazuh ruleset, e.g. rule 5712 for SSH brute force).
 * **XML Infrastructure-as-Code:** Configuring enterprise-grade security policies while maintaining strict syntax formatting constraints.
 * **Purple Teaming Operations:** Combining defensive engineering (Blue) with automated countermeasures to dynamically neutralize adversary attack scripts (Red).
