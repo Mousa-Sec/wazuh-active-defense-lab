@@ -58,6 +58,9 @@ On the manager, I configured two active responses. Each runs Wazuh's `firewall-d
 
 ## Results
 
+A video walkthrough of both detections is on LinkedIn: https://lnkd.in/p/d7XQY2HM
+
+
 ### 1. Real-time FIM alert
 
 ![Real-time FIM alert](fim-alert.png)
@@ -75,7 +78,6 @@ Because `report_changes` is on, the alert's `syscheck.diff` field shows the exac
 ![Active response block](active-block.png)
 
 After repeated failed logins, the dashboard shows rule 651 events ("Host Blocked by firewall-drop Active Response"). Each one is an IP that Wazuh blocked automatically, without manual action.
-
 ---
 
 ## What I learned
