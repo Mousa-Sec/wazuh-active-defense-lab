@@ -1,6 +1,6 @@
 # Wazuh SIEM & Active Response Lab
 
-A two-VM home lab where I set up Wazuh to monitor a Linux endpoint, detect file tampering in real time, and automatically block brute-force attackers at the firewall. I then attacked my own setup to check that each defence worked, as a small purple-team exercise. Built in June 2026.
+A two-VM home lab where I set up Wazuh to monitor a Linux endpoint, detect file tampering in real time, and automatically block brute-force attackers at the firewall. I then attacked my own setup to check that each defence worked, as a small purple-team exercise. Built in June 2026, with a full attack-and-detect run in October 2026..
 
 The real configuration files from both machines are in [`config-backups/`](config-backups/).
 
